@@ -1,0 +1,70 @@
+body{
+    margin: 0;
+    min-height: 100vh;
+}
+
+div#Main{
+    margin: 4vw;
+    min-height: 20vh;
+    width: 92vw;
+    border-radius: 5px;
+    border: 2px solid black;
+}
+
+div#Add{
+    border-bottom: 2px solid;
+    min-height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div#Add input{
+    height: 50%;
+}
+
+div#Add input#Name{
+    width: 75%;
+    font-size: 15pt;
+    margin-right: 1%;
+}
+
+div#Add input#Send{
+    min-width: 5%;
+    font-size: 15pt;
+    margin-right: 2px;
+}
+div#Add input#Reset{
+    min-width: 5%;
+    font-size: 15pt;
+    margin-right: 2px;
+}
+div#Add input#Delete{
+    min-width: 5%;
+    font-size: 15pt;
+}
+
+div#List div.Item{
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 2%;
+    height: 5vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+div#List div p.Main{
+    margin-left: 2%;
+    font-size: 20pt;
+}
+
+div#List div div.Buttons{
+    margin-right: 2%;
+}
+
+div#List div div.Buttons inputs{
+    margin: 0;
+    min-width: 10%;
+    font-size: 10pt;
+}

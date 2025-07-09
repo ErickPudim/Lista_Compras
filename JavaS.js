@@ -1,6 +1,7 @@
 //localstorage.getitem 1
 //coleta o valor dos produtos em forma já pronta em listas, com o valor riscado ou n
 var products = JSON.parse(localStorage.getItem("products")) || []
+var clicks = JSON.parse(localStorage.getItem("clicks")) || 0
 
 function Show(){
     var product = products
@@ -108,10 +109,18 @@ function deleteall(){
     Show()
 }
 
+function click(){
+    clicks += 1
+    localStorage.setItem("clicks", JSON.stringify(clicks))
+    document.getElementById("Clicks").innerHTML = `clicks totais: ${clicks}`
+}
+
+document.getElementById("Clicks").innerHTML = `clicks totais: ${clicks}`
 //eventlistener 5
 //verifica se o botão de adicionar produto foi clicado
 document.getElementById("Send").addEventListener('click',colect)
 Show()
+document.addEventListener('click',click)
 
 
 

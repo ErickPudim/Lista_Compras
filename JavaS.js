@@ -118,10 +118,14 @@ function click(){
 }
 
 function bgcolor(change){
-    if(change == true){
-        if(colormode == "Light"){
+    if(change){
+        if(colormode == "Light" && change !== "Pink"){
             colormode = "Dark"
             localStorage.setItem("colormode", "Dark")
+        }
+        else if(change == "Pink"){
+            colormode = "Pink"
+            localStorage.setItem("colormode", "Pink")
         }
         else{
             colormode = "Light"
@@ -136,8 +140,30 @@ function bgcolor(change){
         for(let i = 0;i<document.getElementsByTagName('div').length;i++){
             document.getElementsByTagName('div')[i].style.borderColor = "rgb(0, 0, 0)"
         }
+        var inputs = document.getElementsByTagName('input')
+        for(let i = 0;i<inputs.length;i++){
+            inputs[i].style.color = "rgb(0, 0, 0)"
+            inputs[i].style.backgroundColor = "rgb(255, 255, 255)"
+            inputs[i].style.borderColor = "rgb(0, 0, 0)"
+        }
         document.getElementById("Body").style.backgroundColor = "rgb(255, 255, 255)"
         document.getElementById("Headline").style.color = "rgb(0, 0, 0)"
+    }
+    else if(colormode == "Pink"){
+        for(let i = 0;i<document.getElementsByTagName('p').length;i++){
+            document.getElementsByTagName('p')[i].style.color = "rgb(255, 143, 255)"
+        }
+        for(let i = 0;i<document.getElementsByTagName('div').length;i++){
+            document.getElementsByTagName('div')[i].style.borderColor = "rgb(255, 143, 255)"
+        }
+        var inputs = document.getElementsByTagName('input')
+        for(let i = 0;i<inputs.length;i++){
+            inputs[i].style.color = "rgb(255, 143, 255)"
+            inputs[i].style.backgroundColor = "rgb(163, 35, 163)"
+            inputs[i].style.borderColor = "rgb(255, 143, 255)"
+        }
+        document.getElementById("Body").style.backgroundColor = "rgb(163, 35, 163)"
+        document.getElementById("Headline").style.color = "rgb(255, 143, 255)"
     }
     else{
         for(let i = 0;i<document.getElementsByTagName('p').length;i++){
@@ -145,6 +171,12 @@ function bgcolor(change){
         }
         for(let i = 0;i<document.getElementsByTagName('div').length;i++){
             document.getElementsByTagName('div')[i].style.borderColor = "rgb(255, 255, 255)"
+        }
+        var inputs = document.getElementsByTagName('input')
+        for(let i = 0;i<inputs.length;i++){
+            inputs[i].style.color = "rgb(255, 255, 255)"
+            inputs[i].style.backgroundColor = "rgb(80, 80, 80)"
+            inputs[i].style.borderColor = "rgb(255, 255, 255)"
         }
         document.getElementById("Body").style.backgroundColor = "rgb(80, 80, 80)"
         document.getElementById("Headline").style.color = "rgb(255, 255, 255)"
@@ -157,7 +189,7 @@ document.getElementById("Clicks").innerHTML = `clicks totais: ${clicks}`
 document.getElementById("Send").addEventListener('click',colect)
 Show()
 document.addEventListener('click',click)
-document.addEventListener("DOMContentLoaded", bgcolor(false))
+document.addEventListener("DOMContentLoaded", bgcolor())
 
 
 

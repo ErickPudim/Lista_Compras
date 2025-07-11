@@ -11,7 +11,7 @@
     <div id="Main">
         <h1 style="text-align: center; margin: 0; margin-top: 10px;" id="Headline">Lista de Compras: por Erick</h1>
         <div id="Add">
-            <input type="text" id="Name" name="text" placeholder="Nome do produto" maxlength="40">
+            <input type="text" id="Name" name="text" maxlength="40">
             <input type="button" id="Send" name="send" value="Salvar">
             <!--eventlistener 1
             verifica quando o botão de tirar o risco de todos os produtos é pressionado-->
@@ -20,6 +20,7 @@
             verifica quando o botão de tirar o deletar todos os produtos é pressionado-->
             <input type="button" id="Delete" name="delete" value="Limpar" onclick="deleteall()">
             <input type="button" id="Background" name="background" value="Modo escuro/claro" onclick="bgcolor(true)">
+            <input type="button" id="Backgroundpink" name="backgroundpink" value="Modo rosa" onclick="bgcolor('Pink')">
         </div>
         <div id="List">
         </div>

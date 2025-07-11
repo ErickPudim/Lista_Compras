@@ -21,32 +21,34 @@ div#Add{
 
 div#Add input{
     height: 50%;
+    font-size: 9pt;
 }
 
 div#Add input#Name{
-    width: 65%;
-    font-size: 12pt;
-    margin-right: 1%;
+    width: 55%;
+    margin-right: 2px;
+    margin-left: 2px;
 }
 
 div#Add input#Send{
     min-width: 5%;
-    font-size: 12pt;
     margin-right: 2px;
 }
 div#Add input#Reset{
     min-width: 5%;
-    font-size: 12pt;
     margin-right: 2px;
 }
 div#Add input#Delete{
     min-width: 5%;
-    font-size: 12pt;
     margin-right: 2px;
 }
 div#Add input#Background{
     min-width: 10%;
-    font-size: 12pt;
+    margin-right: 2px;
+}
+div#Add input#Backgroundpink{
+    min-width: 5%;
+    margin-right: 2px;
 }
 
 div#List div.Item{

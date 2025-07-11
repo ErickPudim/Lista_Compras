@@ -2,6 +2,7 @@
 //coleta o valor dos produtos em forma já pronta em listas, com o valor riscado ou n
 var products = JSON.parse(localStorage.getItem("products")) || []
 var clicks = JSON.parse(localStorage.getItem("clicks")) || 0
+var colormode = localStorage.getItem("colormode") || "Light"
 
 function Show(){
     var product = products
@@ -25,6 +26,7 @@ function Show(){
             else{
                 document.getElementById(product[i][0]).style.textDecoration = "none"
             }
+            bgcolor()
     }
 }
 
@@ -115,12 +117,47 @@ function click(){
     document.getElementById("Clicks").innerHTML = `clicks totais: ${clicks}`
 }
 
+function bgcolor(change){
+    if(change == true){
+        if(colormode == "Light"){
+            colormode = "Dark"
+            localStorage.setItem("colormode", "Dark")
+        }
+        else{
+            colormode = "Light"
+            localStorage.setItem("colormode", "Light")
+        }
+    }
+    localStorage.setItem("colormode", colormode)
+    if(colormode == "Light"){
+        for(let i = 0;i<document.getElementsByTagName('p').length;i++){
+            document.getElementsByTagName('p')[i].style.color = "rgb(0, 0, 0)"
+        }
+        for(let i = 0;i<document.getElementsByTagName('div').length;i++){
+            document.getElementsByTagName('div')[i].style.borderColor = "rgb(0, 0, 0)"
+        }
+        document.getElementById("Body").style.backgroundColor = "rgb(255, 255, 255)"
+        document.getElementById("Headline").style.color = "rgb(0, 0, 0)"
+    }
+    else{
+        for(let i = 0;i<document.getElementsByTagName('p').length;i++){
+            document.getElementsByTagName('p')[i].style.color = "rgb(255, 255, 255)"
+        }
+        for(let i = 0;i<document.getElementsByTagName('div').length;i++){
+            document.getElementsByTagName('div')[i].style.borderColor = "rgb(255, 255, 255)"
+        }
+        document.getElementById("Body").style.backgroundColor = "rgb(80, 80, 80)"
+        document.getElementById("Headline").style.color = "rgb(255, 255, 255)"
+    }
+}
+
 document.getElementById("Clicks").innerHTML = `clicks totais: ${clicks}`
 //eventlistener 5
 //verifica se o botão de adicionar produto foi clicado
 document.getElementById("Send").addEventListener('click',colect)
 Show()
 document.addEventListener('click',click)
+document.addEventListener("DOMContentLoaded", bgcolor(false))
 
 
 

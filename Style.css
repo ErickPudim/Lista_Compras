@@ -24,24 +24,29 @@ div#Add input{
 }
 
 div#Add input#Name{
-    width: 75%;
-    font-size: 15pt;
+    width: 70%;
+    font-size: 12pt;
     margin-right: 1%;
 }
 
 div#Add input#Send{
     min-width: 5%;
-    font-size: 15pt;
+    font-size: 12pt;
     margin-right: 2px;
 }
 div#Add input#Reset{
     min-width: 5%;
-    font-size: 15pt;
+    font-size: 12pt;
     margin-right: 2px;
 }
 div#Add input#Delete{
     min-width: 5%;
-    font-size: 15pt;
+    font-size: 12pt;
+    margin-right: 2px;
+}
+div#Add input#Background{
+    min-width: 5%;
+    font-size: 12pt;
 }
 
 div#List div.Item{
